@@ -1,7 +1,7 @@
-import Button from "./Button";
+import classes from "./ButtonWrapper.module.css";
 
 const ButtonWrapper = (props) => {
-    return <div>{props.children}</div>
+    return <div className={classes.buttonWrapper}>{props.children}</div>
 };
 
 export default ButtonWrapper;
