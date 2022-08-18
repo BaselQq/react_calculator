@@ -1,24 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Button from "./components/Button";
+import Wrapper from "./Helpers/Wrapper";
+import Screen from "./components/Screen";
+import ButtonWrapper from "./components/ButtonWrapper";
 
 function App() {
+  // const btnValues = [
+  //   ["C", "%", "√", "MC"],
+  //   ["MR", "M+", "M-", "÷"],
+  //   [7, 8, 9, "X"],
+  //   [4, 5, 6, "-"],
+  //   [1, 2, 3, "+"],
+  //   [0, ",", "="],
+  // ];
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Wrapper>
+      <Screen value="0" />
+      <ButtonWrapper>
+        <Button 
+          value="0"
+          onClick={() => {
+            console.log("Button Clicked")
+          }}
+        />
+      </ButtonWrapper>
+    </Wrapper>
   );
 }
 
