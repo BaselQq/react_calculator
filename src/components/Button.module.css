@@ -48,6 +48,7 @@
     font-weight: bold;
     cursor: pointer;
     padding-right: 10px ;
+    border-bottom-left-radius: 10px;
 }
 
 .zeroButton:hover{
