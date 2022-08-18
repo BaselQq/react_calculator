@@ -26,6 +26,21 @@
     background-color: #AF033B;
 }
 
+.equalButton{
+    border: 0;
+    background-color: #90142D;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    cursor: pointer;
+    padding: 10px;
+    padding-right: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.equalButton:hover{
+    background-color: #AF033B;
+}
+
 .cButton{
     border: 0;
     background-color: #5E5E64;

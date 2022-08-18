@@ -22,6 +22,11 @@ const Button = (props) => {
         props.value == "0"
           ? classes.zeroButton
           : classes.button
+      }
+      ${
+        props.value == "="
+          ? classes.equalButton
+          : classes.button
       }`}
       onClick={props.onClick}
     >
