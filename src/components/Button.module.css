@@ -11,3 +11,44 @@
 .button:hover{
     background-color: #98959e;
 }
+
+.redButton{
+    border: 0;
+    background-color: #90142D;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    cursor: pointer;
+    padding: 10px;
+    padding-right: 10px ;
+}
+
+.redButton:hover{
+    background-color: #AF033B;
+}
+
+.cButton{
+    border: 0;
+    background-color: #5E5E64;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    cursor: pointer;
+    padding: 10px;
+    padding-right: 10px ;
+}
+
+.cButton:hover{
+    background-color: #98959e;
+}
+
+.zeroButton{
+    border: 0;
+    background-color: #7C7A80;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    cursor: pointer;
+    padding-right: 10px ;
+}
+
+.zeroButton:hover{
+    background-color: #98959e;
+}
