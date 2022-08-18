@@ -19,8 +19,18 @@ function App() {
     [7, 8, 9, "x"],
     [4, 5, 6, "-"],
     [1, 2, 3, "+"],
-    [0, ",", "="],
+    [0, ".", "="],
   ];
+
+  const commaClickHandler = (e) => {
+    e.preventDefault();
+    const comma = e.target.innerHTML;
+
+    setCalc({
+      ...calc,
+      num: !calc.num.toString().includes(".") ? calc.num + comma : calc.num,
+  });
+};
 
   const signClickHandler = (e) => {
     e.preventDefault();
@@ -32,7 +42,6 @@ function App() {
       res: !calc.res && calc.num ? calc.num : calc.res,
       num: 0
     });
-    console.log(calc);
   };
 
   const equalsClickHandler = () => {
@@ -63,16 +72,17 @@ function App() {
   const numClickHandler = (e) => {
     e.preventDefault();
     const value = e.target.innerHTML;
-    setCalc({
-      ...calc,
-      num:
-        calc.num === 0 && value === "0"
-        ? 0
-        : calc.num % 1 === 0
-        ? Number(calc.num + value)
-        : calc.num + value,
-      res: !calc.sign ? 0 : calc.res
-    })
+    
+      setCalc({
+        ...calc,
+        num:
+          calc.num === 0 && value === "0"
+          ? 0
+          : calc.num % 1 === 0
+          ? Number(calc.num + value)
+          : calc.num + value,
+        res: !calc.sign ? 0 : calc.res
+      })
   };
 
   return (
@@ -93,6 +103,8 @@ function App() {
               ? equalsClickHandler
               : btn === "/" || btn === "x" || btn === "-" || btn === "+"
               ? signClickHandler
+              : btn === "."
+              ? commaClickHandler
               : numClickHandler
             }
           />
