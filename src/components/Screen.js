@@ -1,7 +1,7 @@
 import classes from "./Screen.module.css";
 
 const Screen = (props) => {
-    return <label className={classes.label}>{props.value}</label>
+    return <div type="text" className={classes.label}>{props.value}</div>
 };
 
 export default Screen;

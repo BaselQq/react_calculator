@@ -4,6 +4,7 @@ import Wrapper from "./Helpers/Wrapper";
 import Screen from "./components/Screen";
 import ButtonWrapper from "./components/ButtonWrapper";
 import { useState } from "react";
+import Logo from './components/Logo'
 
 function App() {
   const [calc, setCalc] = useState({
@@ -20,6 +21,35 @@ function App() {
     [1, 2, 3, "+"],
     [0, ",", "="],
   ];
+
+  const signClickHandler = (e) => {
+    e.preventDefault();
+    const sign = e.target.innerHTML;
+
+    setCalc({
+      ...calc,
+      sign,
+      res: !calc.res && calc.num ? calc.num : calc.res,
+      num: 0
+    });
+    console.log(calc);
+  };
+
+  const equalsClickHandler = () => {
+    const calculateEquals = (a, b, sign) => 
+      sign === "+" ? a + b
+      : sign === "-" ? a - b
+      : sign === "x" ? a * b 
+      : a / b
+
+    setCalc({
+      ...calc,
+      res:
+        calculateEquals(Number(calc.res), Number(calc.num), calc.sign),
+      sign: "",
+      num: 0
+    })
+  };
 
   const resetClickHandler = () => {
     setCalc({
@@ -47,6 +77,7 @@ function App() {
 
   return (
     <Wrapper>
+      <Logo />
       <Screen value={calc.num ? calc.num : calc.res} />
       <ButtonWrapper>
         {btnValues.flat().map((btn, i) => {
@@ -56,7 +87,12 @@ function App() {
             className=""
             value={btn}
             onClick={
-              btn === "C" ? resetClickHandler
+              btn === "C" 
+              ? resetClickHandler 
+              : btn === "="
+              ? equalsClickHandler
+              : btn === "/" || btn === "x" || btn === "-" || btn === "+"
+              ? signClickHandler
               : numClickHandler
             }
           />

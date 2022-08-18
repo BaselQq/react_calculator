@@ -1,4 +1,9 @@
 .label{
-    background-color:rgb(156, 158, 158);
-    display: block;
+    background-color:#514F55;
+    padding-top: 20px;
+    margin-top: -20px;
+    padding-left: 110px;
+    padding-right: 10px;
+    color:white;
+    direction: rtl;
 }
