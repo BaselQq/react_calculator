@@ -13,6 +13,7 @@ function App() {
     res: 0,
   });
 
+  console.log(calc);
   const btnValues = [
     ["C", "%", "√", "MC"],
     ["MR", "M+", "M-", "÷"],
